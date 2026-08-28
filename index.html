@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Аренда Tesla Cybertruck в Алматы с водителем - FIRST AUTO RENT</title>
+<meta name="description" content="Аренда Tesla Cybertruck в Алматы с личным водителем от 1 часа. Два автомобиля в парке. Подача к дому, на площадку, в аэропорт. Свадьбы, съёмки, встреча гостей. От 80 000 ₸ в час. WhatsApp +7 706 661 37 05.">
+<link rel="canonical" href="https://firstautorent.kz/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="geo.region" content="KZ-ALA">
+<meta name="geo.placename" content="Алматы">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="FIRST AUTO RENT">
+<meta property="og:title" content="Аренда Tesla Cybertruck в Алматы с водителем">
+<meta property="og:description" content="Два Cybertruck с личными водителями. Аренда от одного часа. Маршрут, время и стиль поездки выбираете вы.">
+<meta property="og:url" content="https://firstautorent.kz/">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRental",
+  "name": "FIRST AUTO RENT",
+  "description": "Аренда Tesla Cybertruck с личным водителем в Алматы. Два автомобиля в парке, аренда от одного часа.",
+  "url": "https://firstautorent.kz/",
+  "telephone": "+77066613705",
+  "priceRange": "80000-600000 KZT",
+  "areaServed": { "@type": "City", "name": "Алматы" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ" },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00", "closes": "23:59"
+  },
+  "makesOffer": [
+    { "@type": "Offer", "name": "Аренда Cybertruck, 1 час",   "price": "80000",  "priceCurrency": "KZT" },
+    { "@type": "Offer", "name": "Аренда Cybertruck, 3 часа",  "price": "200000", "priceCurrency": "KZT" },
+    { "@type": "Offer", "name": "Аренда Cybertruck, 5 часов", "price": "300000", "priceCurrency": "KZT" },
+    { "@type": "Offer", "name": "Аренда Cybertruck, 10 часов","price": "600000", "priceCurrency": "KZT" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Geologica:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E7EAEC;
+  --bg-2:#F4F6F7;
+  --panel:#FBFCFC;
+  --steel:#C4CACF;
+  --steel-2:#9CA4AB;
+  --ink:#0B0C0D;
+  --ink-2:#22262A;
+  --muted:#565C61;
+  --line:rgba(11,12,13,.14);
+  --glow:#EAF4FA;
+  --pad:clamp(20px,5vw,88px);
+  --chamfer:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Geologica',system-ui,sans-serif;
+  background:var(--bg);color:var(--ink);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3{font-weight:400;line-height:1.05}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+/* ---------- shared devices ---------- */
+.eyebrow{
+  font-size:10px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--muted);font-weight:400;
+  display:flex;align-items:center;gap:12px;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--steel-2)}
+/* the full-width LED bar is the truck's most recognisable line - reused as a rule */
+.lightbar{
+  height:2px;width:100%;
+  background:linear-gradient(90deg,transparent,rgba(11,12,13,.34) 12%,rgba(11,12,13,.34) 88%,transparent);
+  position:relative;
+}
+.lightbar::after{
+  content:"";position:absolute;inset:-3px 42% -3px 42%;
+  background:linear-gradient(90deg,transparent,#fff,transparent);
+  filter:blur(3px);
+}
+.chamfer{clip-path:polygon(var(--chamfer) 0,100% 0,100% calc(100% - var(--chamfer)),calc(100% - var(--chamfer)) 100%,0 100%,0 var(--chamfer))}
+.btn{
+  display:inline-block;padding:16px 38px;border:1px solid var(--ink);
+  font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;background:transparent;color:var(--ink);
+  font-family:'Geologica';transition:background .25s,color .25s;
+  clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px);
+}
+.btn:hover{background:var(--ink);color:#fff}
+.btn.solid{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn.solid:hover{background:var(--ink-2)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+section{padding:clamp(70px,11vh,130px) var(--pad)}
+.shead{margin-bottom:clamp(34px,5vh,58px)}
+.shead h2{
+  font-size:clamp(26px,4vw,54px);letter-spacing:-.01em;margin-top:16px;
+}
+
+/* ---------- nav ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;gap:clamp(16px,3vw,44px);
+  padding:0 var(--pad);height:74px;
+  background:rgba(231,234,236,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.brand{
+  font-family:'Syncopate',sans-serif;font-weight:700;
+  font-size:clamp(11px,1vw,13px);letter-spacing:.3em;
+  text-decoration:none;white-space:nowrap;
+}
+.nav .links{display:flex;gap:clamp(14px,2vw,32px);margin-left:auto}
+.nav .links a{
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;transition:color .2s;
+}
+.nav .links a:hover{color:var(--ink)}
+.nav .wa{
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  text-decoration:none;border:1px solid var(--ink);padding:11px 22px;
+  clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px);
+  transition:background .22s,color .22s;
+}
+.nav .wa:hover{background:var(--ink);color:#fff}
+
+/* ---------- hero ---------- */
+/* one viewport tall, so the stats bar is on screen the moment the page opens */
+.hero{position:relative;height:100svh;min-height:540px;overflow:hidden;background:#0E1418}
+.hero-frame{position:absolute;inset:0;overflow:hidden}
+/* the frame's proportions match the band, so the ridge always lands where the
+   headline expects it, whatever the window size */
+.hero-back,.hero-front{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:50% 50%;
+}
+.hero-back{z-index:2}
+.hero-word{
+  position:absolute;z-index:3;left:0;right:0;
+  top:6.3%;pointer-events:none;
+  font-family:'Syncopate',sans-serif;font-weight:400;
+  font-size:min(9.45vw,158px);letter-spacing:.012em;
+  line-height:.82;text-transform:uppercase;white-space:nowrap;
+  color:#fff;text-align:center;
+}
+.hero-front{z-index:4}
+.hero-veil{
+  position:absolute;inset:0;z-index:5;pointer-events:none;
+  background:
+    linear-gradient(100deg,rgba(8,12,16,.80) 0%,rgba(8,12,16,.56) 26%,
+                    rgba(8,12,16,.18) 46%,rgba(8,12,16,0) 64%),
+    linear-gradient(0deg,rgba(8,12,16,.30) 0%,transparent 18%);
+}
+.robot{
+  position:absolute;z-index:6;
+  left:1%;bottom:9%;width:25vw;height:45%;
+  pointer-events:none;opacity:0;transition:opacity 1s ease .2s;
+}
+.robot.ready{opacity:1;pointer-events:auto}
+.robot canvas{width:100%!important;height:100%!important;display:block}
+.hero-copy{
+  position:absolute;z-index:7;left:var(--pad);
+  top:27.5%;max-width:min(38vw,452px);
+}
+.hero-copy .eyebrow{color:rgba(255,255,255,.76)}
+.hero-copy .eyebrow::before{background:rgba(255,255,255,.5)}
+.hero-copy p{
+  font-size:clamp(11px,.86vw,12.5px);font-weight:300;letter-spacing:.1em;
+  line-height:2;text-transform:uppercase;color:rgba(255,255,255,.84);
+}
+.hero-copy p b{color:#fff;font-weight:500}
+.hero-copy .btn{margin-top:22px;border-color:#fff;color:#fff}
+.hero-copy .btn:hover{background:#fff;color:var(--ink)}
+.hero-facts{
+  position:absolute;z-index:8;left:0;right:0;bottom:0;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:#0A0E11;border-top:1px solid rgba(255,255,255,.13);
+}
+.hero-facts div{padding:16px var(--pad);border-left:1px solid rgba(255,255,255,.13)}
+.hero-facts div:first-child{border-left:0}
+.hero-facts b{
+  display:block;font-family:'Syncopate';font-weight:700;color:#fff;
+  font-size:clamp(14px,1.5vw,21px);letter-spacing:.02em;
+}
+.hero-facts span{
+  display:block;margin-top:5px;font-size:9px;letter-spacing:.19em;
+  text-transform:uppercase;color:rgba(255,255,255,.60);
+}
+.nav{height:50px;background:transparent;border-bottom-color:transparent}
+.nav .brand{color:#fff}
+.nav .links a{color:rgba(255,255,255,.72)}
+.nav .links a:hover{color:#fff}
+.nav .wa{border-color:#fff;color:#fff;padding:9px 20px}
+.nav .wa:hover{background:#fff;color:var(--ink)}
+.nav.solid{background:rgba(231,234,236,.88);border-bottom-color:var(--line)}
+.nav.solid .brand{color:var(--ink)}
+.nav.solid .links a{color:var(--muted)}
+.nav.solid .links a:hover{color:var(--ink)}
+.nav.solid .wa{border-color:var(--ink);color:var(--ink)}
+.nav.solid .wa:hover{background:var(--ink);color:#fff}
+
+/* ---------- fleet ---------- */
+.fleet{background:var(--bg-2)}
+.fleet-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:center}
+.fleet figure{position:relative;overflow:hidden;--chamfer:26px}
+.fleet figure img{width:100%;height:100%;object-fit:cover}
+.fleet .spec{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);margin-top:34px;border:1px solid var(--line)}
+.fleet .spec div{background:var(--bg-2);padding:20px 22px}
+.fleet .spec b{display:block;font-family:'Syncopate';font-weight:700;font-size:19px}
+.fleet .spec span{display:block;margin-top:8px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.fleet p.lede{font-size:15px;font-weight:300;line-height:1.85;color:var(--ink-2);margin-top:20px}
+
+/* ---------- scenarios ---------- */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,22px)}
+.card{
+  position:relative;overflow:hidden;background:#0B0C0D;--chamfer:20px;
+  aspect-ratio:3/4;display:flex;align-items:flex-end;
+  text-decoration:none;color:#fff;
+}
+.card img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform .7s cubic-bezier(.22,.61,.36,1);
+}
+.card:hover img{transform:scale(1.055)}
+.card::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,9,10,0) 34%,rgba(8,9,10,.86) 100%);
+}
+.card .txt{position:relative;z-index:2;padding:24px 22px}
+.card h3{font-size:clamp(15px,1.4vw,20px);letter-spacing:-.005em}
+.card p{margin-top:9px;font-size:11.5px;font-weight:300;line-height:1.65;color:rgba(255,255,255,.7)}
+
+/* ---------- tariffs ---------- */
+.tariffs{background:var(--panel)}
+.rates{border-top:1px solid var(--line)}
+.rate{
+  display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr auto;
+  align-items:center;gap:20px;
+  padding:26px 4px;border-bottom:1px solid var(--line);
+  transition:background .25s;
+}
+.rate:hover{background:var(--bg-2)}
+.rate .h{font-family:'Syncopate';font-weight:700;font-size:clamp(17px,2vw,27px)}
+.rate .sum{font-family:'Syncopate';font-weight:400;font-size:clamp(15px,1.6vw,21px)}
+.rate .per,.rate .save{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.rate .save b{color:var(--ink);font-weight:500}
+.rate.head{padding:14px 4px;border-bottom:1px solid var(--line)}
+.rate.head span{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--steel-2)}
+.rate .btn{padding:12px 24px;font-size:10px}
+.note{margin-top:26px;font-size:12px;font-weight:300;line-height:1.9;color:var(--muted);max-width:70ch}
+
+/* ---------- interior split ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,22px)}
+.split figure{overflow:hidden;--chamfer:22px;aspect-ratio:16/11}
+.split img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- steps ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,34px)}
+.step .n{
+  font-family:'Syncopate';font-weight:700;font-size:12px;letter-spacing:.1em;
+  color:var(--steel-2);
+}
+.step h3{font-size:17px;margin:16px 0 10px}
+.step p{font-size:13px;font-weight:300;line-height:1.75;color:var(--muted)}
+.step .lightbar{margin-top:18px;opacity:.5}
+
+/* ---------- final cta ---------- */
+.final{
+  position:relative;background:#0B0C0D;color:#fff;overflow:hidden;
+  text-align:center;padding-block:clamp(80px,14vh,150px);
+}
+.final img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.30;
+}
+.final .inner{position:relative;z-index:2}
+.final h2{font-size:clamp(28px,5vw,66px);letter-spacing:-.01em}
+.final p{margin-top:20px;font-size:12px;letter-spacing:.17em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.final .row{margin-top:38px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.final .btn{border-color:#fff;color:#fff}
+.final .btn:hover{background:#fff;color:var(--ink)}
+.final .btn.solid{background:#fff;color:var(--ink)}
+.final .btn.solid:hover{background:var(--steel)}
+
+footer{
+  padding:38px var(--pad);display:flex;gap:20px;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  border-top:1px solid var(--line);
+}
+footer a{text-decoration:none}
+footer a:hover{color:var(--ink)}
+footer .seo{
+  flex-basis:100%;order:9;margin-top:22px;padding-top:20px;
+  border-top:1px solid var(--line);
+  font-size:10.5px;line-height:1.9;letter-spacing:.04em;
+  text-transform:none;color:var(--steel-2);max-width:110ch;
+}
+
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+
+/* ---------- cursor glow ---------- */
+.glow{
+  position:fixed;top:0;left:0;z-index:9;pointer-events:none;
+  width:560px;height:560px;margin:-280px 0 0 -280px;border-radius:50%;
+  opacity:0;transition:opacity .45s ease;
+  background:radial-gradient(circle closest-side,
+    rgba(255,255,255,.30) 0%,rgba(255,255,255,.16) 34%,
+    rgba(255,255,255,.05) 60%,transparent 78%);
+  mix-blend-mode:screen;filter:blur(14px);will-change:transform;
+}
+.glow.on{opacity:1}
+/* over the photograph it burns brighter; over the light sections it stays subtle */
+.glow.hot{
+  width:760px;height:760px;margin:-380px 0 0 -380px;
+  background:radial-gradient(circle closest-side,
+    rgba(255,255,255,.46) 0%,rgba(255,255,255,.24) 30%,
+    rgba(255,255,255,.08) 58%,transparent 78%);
+}
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
+  .reveal.in{opacity:1;transform:none}
+  .hero-word,.hero-copy>*{opacity:0;animation:rise .9s cubic-bezier(.22,.61,.36,1) forwards}
+  .hero-word{animation-delay:.05s}
+  .hero-copy .eyebrow{animation-delay:.34s}
+  .hero-copy p{animation-delay:.42s}
+  .hero-copy .btn{animation-delay:.52s}
+  @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1080px){
+  .cards,.steps{grid-template-columns:repeat(2,1fr)}
+  .fleet-grid,.split{grid-template-columns:1fr}
+  .hero-copy{max-width:66vw}
+}
+@media (max-width:760px){
+  .nav .links{display:none}
+  .nav .wa{margin-left:auto}
+  .robot{display:none}
+  .nav{height:54px}
+  .hero{display:flex;flex-direction:column;height:100svh}
+  .hero-frame{position:relative;inset:auto;flex:none;width:100%;aspect-ratio:904/946}
+  .hero-back,.hero-front{object-position:50% 50%}
+  .hero-word{top:14.5%;font-size:clamp(24px,12.8vw,78px);letter-spacing:.01em}
+  .hero-veil{z-index:5}
+  /* copy leaves the picture and sits on solid dark, so nothing is cropped */
+  .hero-copy{
+    position:relative;inset:auto;flex:1;display:flex;flex-direction:column;
+    justify-content:center;max-width:none;padding:22px var(--pad);
+    background:#0A0E11;
+  }
+  .hero-copy p{margin-top:14px}
+  .hero-facts{position:relative;inset:auto}
+  .hero-veil{background:
+    linear-gradient(180deg,rgba(8,12,16,.34) 0%,rgba(8,12,16,.30) 42%,rgba(8,12,16,.30) 100%)}
+  .hero-facts{grid-template-columns:1fr 1fr}
+  .hero-facts div:nth-child(3){border-left:0}
+  .hero-facts div:nth-child(n+3){border-top:1px solid rgba(255,255,255,.13)}
+  .rate{grid-template-columns:1fr auto;gap:8px 16px;padding:22px 4px}
+  .rate .per{grid-column:1/-1;order:3}
+  .rate .save{grid-column:1/-1;order:4}
+  .rate .btn{grid-column:1/-1;order:5;justify-self:start;margin-top:8px}
+  .rate.head{display:none}
+}
+@media (max-width:520px){
+  .cards{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="#top" class="brand">FIRST&nbsp;AUTO&nbsp;RENT</a>
+  <div class="links">
+    <a href="#fleet">Автопарк</a>
+    <a href="#cases">Цели</a>
+    <a href="#rates">Тарифы</a>
+    <a href="#how">Как это работает</a>
+  </div>
+  <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20FIRST%20AUTO%20RENT.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%83%20Cybertruck%20%D1%81%20%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%BC%20%D0%B2%20%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B." class="wa" target="_blank" rel="noopener">Связаться</a>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="top">
+  <h1 class="sr-only">Аренда Tesla Cybertruck в Алматы с личным водителем - FIRST AUTO RENT</h1>
+  <div class="hero-frame">
+    <picture>
+      <source media="(max-width:760px)" srcset="img/hero-back-m.webp">
+      <img class="hero-back" fetchpriority="high" decoding="async" src="img/hero-back.webp" alt="">
+    </picture>
+    <div class="hero-word" aria-hidden="true">Cybertruck</div>
+    <picture>
+      <source media="(max-width:760px)" srcset="img/hero-front-m.webp">
+      <img class="hero-front" fetchpriority="high" decoding="async" src="img/hero-front.webp" alt="Tesla Cybertruck с личным водителем на смотровой площадке над Алматы">
+    </picture>
+    <div class="hero-veil"></div>
+
+    <div class="robot" id="robot" data-scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode">
+      <canvas id="robot-canvas" aria-hidden="true"></canvas>
+    </div>
+
+  </div>
+
+  <div class="hero-copy">
+    <div class="eyebrow">Алматы · с личным водителем</div>
+    <p style="margin-top:18px">
+      Маршрут, время и стиль поездки <b>выбираете вы</b>.<br>
+      За рулём - личные водители с опытом.
+    </p>
+    <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20Cybertruck%20%D1%81%20%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%BC%20%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%BC%20%D0%B2%20%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B." class="btn" target="_blank" rel="noopener">Забронировать</a>
+  </div>
+
+  <div class="hero-facts">
+    <div><b>2</b><span>автомобиля в парке</span></div>
+    <div><b>1 час</b><span>минимальная аренда</span></div>
+    <div><b>80 000 ₸</b><span>час с водителем</span></div>
+    <div><b>24/7</b><span>подача по городу</span></div>
+  </div>
+</header>
+
+<!-- ===================== FLEET ===================== -->
+<section class="fleet" id="fleet">
+  <div class="shead reveal">
+    <div class="eyebrow">Автопарк</div>
+    <h2>Два, а не один</h2>
+  </div>
+  <div class="fleet-grid">
+    <figure class="chamfer reveal"><img src="img/pair-grey.webp" alt="Два Tesla Cybertruck у здания в Алматы" loading="lazy" decoding="async"></figure>
+    <div class="reveal">
+      <p class="lede">
+        В Алматы Cybertruck можно пересчитать по пальцам. У нас их два - и это меняет
+        то, что можно предложить клиенту. Колонна из двух машин на свадьбу.
+        Второй борт в резерве, если первый занят. Два ракурса в одном кадре на съёмке.
+      </p>
+      <p class="lede">
+        Обе машины новые, в идеальном состоянии.
+      </p>
+      <p class="lede">
+        Маршрут, время подачи и стиль поездки вы задаёте сами. За рулём - личные
+        водители с опытом работы на представительских автомобилях: в костюме,
+        с пониманием протокола встречи гостей.
+      </p>
+      <div class="spec">
+        <div><b>2 шт.</b><span>в парке одновременно</span></div>
+        <div><b>4</b><span>пассажира в салоне</span></div>
+        <div><b>Steel</b><span>нержавеющий кузов</span></div>
+        <div><b>Алматы</b><span>город и пригород</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SCENARIOS ===================== -->
+<section id="cases">
+  <div class="shead reveal">
+    <div class="eyebrow">Цели</div>
+    <h2>Под какую задачу берут</h2>
+  </div>
+  <div class="cards">
+    <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20Cybertruck%20%D1%81%20%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%BC%20%D0%B4%D0%BB%D1%8F%20%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%D0%B8%20%D0%B3%D0%BE%D1%81%D1%82%D0%B5%D0%B9." class="card chamfer reveal" target="_blank" rel="noopener">
+      <img src="img/driver.webp" alt="Личный водитель в костюме за рулём Cybertruck" loading="lazy" decoding="async">
+      <div class="txt">
+        <h3>Встреча гостей</h3>
+        <p>Аэропорт, отель, площадка. Водитель в костюме встречает и сопровождает.</p>
+      </div>
+    </a>
+    <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20Cybertruck%20%D0%B4%D0%BB%D1%8F%20%D1%81%D1%8A%D1%91%D0%BC%D0%BA%D0%B8%20%D0%B8%D0%BB%D0%B8%20PR-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0." class="card chamfer reveal" target="_blank" rel="noopener">
+      <img src="img/model.webp" alt="Модель у открытой двери Cybertruck" loading="lazy" decoding="async">
+      <div class="txt">
+        <h3>Съёмки и PR</h3>
+        <p>Реклама, клипы, контент для брендов. Машина как реквизит и как повод.</p>
+      </div>
+    </a>
+    <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9D%D1%83%D0%B6%D0%BD%D1%8B%20Cybertruck%20%D0%BD%D0%B0%20%D1%81%D0%B2%D0%B0%D0%B4%D1%8C%D0%B1%D1%83%20-%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BA%D0%BE%D0%BB%D0%BE%D0%BD%D0%BD%D0%B0%20%D0%B8%D0%B7%20%D0%B4%D0%B2%D1%83%D1%85%20%D0%BC%D0%B0%D1%88%D0%B8%D0%BD." class="card chamfer reveal" target="_blank" rel="noopener">
+      <img src="img/pair-lights.webp" alt="Два Cybertruck с включёнными фарами на улице Алматы" loading="lazy" decoding="async">
+      <div class="txt">
+        <h3>Свадьбы и колонна</h3>
+        <p>Две машины в ряд. Подача к дому, маршрут по городу, фотостоп.</p>
+      </div>
+    </a>
+    <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20Cybertruck%20%D0%BD%D0%B0%20%D0%B4%D0%B5%D0%BD%D1%8C%20%D1%80%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F." class="card chamfer reveal" target="_blank" rel="noopener">
+      <img src="img/vertical-lights.webp" alt="Cybertruck с включёнными фарами" loading="lazy" decoding="async">
+      <div class="txt">
+        <h3>Дни рождения</h3>
+        <p>От дома до ресторана. Час, три или весь вечер - как удобно.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ===================== TARIFFS ===================== -->
+<section class="tariffs" id="rates">
+  <div class="shead reveal">
+    <div class="eyebrow">Тарифы</div>
+    <h2>Чем дольше, тем выгоднее</h2>
+  </div>
+
+  <div class="rates reveal">
+    <div class="rate head">
+      <span>Тариф</span><span>Стоимость</span><span>Цена часа</span><span>Ваша выгода</span><span></span>
+    </div>
+
+    <div class="rate">
+      <div class="h">1 час</div>
+      <div class="sum">80 000 ₸</div>
+      <div class="per">80 000 ₸ / час</div>
+      <div class="save">-</div>
+      <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20Cybertruck%20%D0%BD%D0%B0%201%20%D1%87%D0%B0%D1%81%20-%2080%20000%20%E2%82%B8.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%BD%D0%BE%D0%B5%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F." class="btn" target="_blank" rel="noopener">Выбрать</a>
+    </div>
+
+    <div class="rate">
+      <div class="h">3 часа</div>
+      <div class="sum">200 000 ₸</div>
+      <div class="per">66 667 ₸ / час</div>
+      <div class="save">выгода <b>40 000 ₸</b></div>
+      <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20Cybertruck%20%D0%BD%D0%B0%203%20%D1%87%D0%B0%D1%81%D0%B0%20-%20200%20000%20%E2%82%B8.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%BD%D0%BE%D0%B5%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F." class="btn" target="_blank" rel="noopener">Выбрать</a>
+    </div>
+
+    <div class="rate">
+      <div class="h">5 часов</div>
+      <div class="sum">300 000 ₸</div>
+      <div class="per">60 000 ₸ / час</div>
+      <div class="save">выгода <b>100 000 ₸</b></div>
+      <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20Cybertruck%20%D0%BD%D0%B0%205%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2%20-%20300%20000%20%E2%82%B8.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%BD%D0%BE%D0%B5%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F." class="btn" target="_blank" rel="noopener">Выбрать</a>
+    </div>
+
+    <div class="rate">
+      <div class="h">10 часов</div>
+      <div class="sum">600 000 ₸</div>
+      <div class="per">60 000 ₸ / час</div>
+      <div class="save">выгода <b>200 000 ₸</b></div>
+      <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20Cybertruck%20%D0%BD%D0%B0%2010%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2%20-%20600%20000%20%E2%82%B8.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%BD%D0%BE%D0%B5%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F." class="btn solid" target="_blank" rel="noopener">Выбрать</a>
+    </div>
+  </div>
+
+  <p class="note">
+    Цены указаны за один автомобиль с личным водителем. Выгода считается относительно
+    почасового тарифа 80 000 ₸. Аренда двух машин, выезд за город и съёмочный день -
+    по запросу. Работаем с агентствами по договору.
+  </p>
+</section>
+
+<!-- ===================== INTERIOR ===================== -->
+<section>
+  <div class="shead reveal">
+    <div class="eyebrow">Салон</div>
+    <h2>Внутри</h2>
+  </div>
+  <div class="split">
+    <figure class="chamfer reveal"><img src="img/interior.webp" alt="Салон Cybertruck" loading="lazy" decoding="async"></figure>
+    <figure class="chamfer reveal"><img src="img/cockpit.webp" alt="Руль и центральный экран Cybertruck" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
+
+<!-- ===================== HOW ===================== -->
+<section class="fleet" id="how">
+  <div class="shead reveal">
+    <div class="eyebrow">Как это работает</div>
+    <h2>Четыре шага</h2>
+  </div>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="n">01</div>
+      <h3>Заявка</h3>
+      <p>Пишете в WhatsApp: дата, время, повод. Отвечаем в течение 15 минут.</p>
+      <div class="lightbar"></div>
+    </div>
+    <div class="step reveal">
+      <div class="n">02</div>
+      <h3>Маршрут</h3>
+      <p>Согласуем точку подачи, маршрут и продолжительность. Считаем стоимость.</p>
+      <div class="lightbar"></div>
+    </div>
+    <div class="step reveal">
+      <div class="n">03</div>
+      <h3>Подтверждение</h3>
+      <p>Бронируем машину и водителя. Агентствам - счёт и договор.</p>
+      <div class="lightbar"></div>
+    </div>
+    <div class="step reveal">
+      <div class="n">04</div>
+      <h3>Подача</h3>
+      <p>Водитель приезжает за 10 минут до назначенного времени. Дальше - по вашему сценарию.</p>
+      <div class="lightbar"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL ===================== -->
+<section class="final" id="book">
+  <img src="img/rear.webp" alt="" loading="lazy" decoding="async">
+  <div class="inner">
+    <div style="display:flex;justify-content:center"><div class="eyebrow" style="color:rgba(255,255,255,.6)">Свободные даты</div></div>
+    <h2 style="margin-top:20px">Забронировать<br>Cybertruck</h2>
+    <p>Ответим в WhatsApp за 15 минут</p>
+    <div class="row">
+      <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20Cybertruck.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5%20%D0%B4%D0%B0%D1%82%D1%8B." class="btn solid" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      <a href="tel:+77066613705" class="btn">+7 706 661 37 05</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>FIRST AUTO RENT · Алматы</span>
+  <p class="seo">
+    Аренда Tesla Cybertruck в Алматы с водителем: почасовая аренда премиум авто,
+    подача к дому, в аэропорт и на площадку. Кибертрак на свадьбу, на выпускной,
+    на день рождения и для фотосессии. Прокат электромобиля Tesla с водителем,
+    трансфер и встреча гостей, авто для съёмок и рекламы. Два Cybertruck в парке,
+    аренда от одного часа.
+  </p>
+  <span><a href="#rates">Тарифы</a> · <a href="#fleet">Автопарк</a> · <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20FIRST%20AUTO%20RENT.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%83%20Cybertruck%20%D1%81%20%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%BC%20%D0%B2%20%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B." target="_blank" rel="noopener">WhatsApp</a> · <a href="tel:+77066613705">+7 706 661 37 05</a></span>
+  <span>© 2026</span>
+</footer>
+
+<script>
+const nav = document.querySelector('.nav');
+const hero = document.querySelector('.hero');
+new IntersectionObserver(([e]) => nav.classList.toggle('solid', !e.isIntersecting),
+  { rootMargin: '-70px 0px 0px 0px' }).observe(hero);
+
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+} else {
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 4) * 70 + 'ms';
+    io.observe(el);
+  });
+}
+
+// ---- cursor glow --------------------------------------------------------
+(() => {
+  const fine = matchMedia('(pointer: fine)').matches;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!fine || reduced) return;
+
+  const glow = document.createElement('div');
+  glow.className = 'glow';
+  document.body.appendChild(glow);
+
+  const hero = document.querySelector('.hero');
+  let tx = innerWidth / 2, ty = innerHeight / 2, x = tx, y = ty, raf = 0;
+
+  const tick = () => {
+    // ease toward the pointer so the light lags a little instead of snapping
+    x += (tx - x) * 0.16;
+    y += (ty - y) * 0.16;
+    glow.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    raf = (Math.abs(tx - x) > 0.4 || Math.abs(ty - y) > 0.4) ? requestAnimationFrame(tick) : 0;
+  };
+
+  addEventListener('pointermove', (e) => {
+    tx = e.clientX; ty = e.clientY;
+    glow.classList.add('on');
+    const r = hero.getBoundingClientRect();
+    glow.classList.toggle('hot', e.clientY >= r.top && e.clientY <= r.bottom);
+    if (!raf) raf = requestAnimationFrame(tick);
+  }, { passive: true });
+
+  addEventListener('pointerdown', () => glow.classList.add('on'), { passive: true });
+  document.addEventListener('mouseleave', () => glow.classList.remove('on'));
+})();
+
+// ---- Spline robot -------------------------------------------------------
+// Heavy WebGL scene: only mounts on wide screens, only when motion is welcome,
+// and quietly removes itself if the CDN does not answer.
+(() => {
+  const slot = document.getElementById('robot');
+  if (!slot) return;
+
+  const wide    = matchMedia('(min-width: 1024px)').matches;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!wide || reduced) { slot.remove(); return; }
+
+  let started = false;
+  const start = async () => {
+    if (started) return;
+    started = true;
+    const bail = setTimeout(() => slot.remove(), 12000);
+    try {
+      const { Application } = await import(
+        'https://unpkg.com/@splinetool/runtime@1.9.28/build/runtime.js'
+      );
+      const app = new Application(document.getElementById('robot-canvas'));
+      await app.load(slot.dataset.scene);
+      clearTimeout(bail);
+      slot.classList.add('ready');
+    } catch (e) {
+      clearTimeout(bail);
+      console.warn('Spline scene unavailable, hero falls back to the photo.', e);
+      slot.remove();
+    }
+  };
+
+  // do not block first paint
+  if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 2500 });
+  else setTimeout(start, 1200);
+})();
+</script>
+</body>
+</html>
