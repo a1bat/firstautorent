@@ -355,9 +355,9 @@ footer .seo{
   .robot{display:none}
   .nav{height:54px}
   .hero{display:flex;flex-direction:column;height:100svh}
-  .hero-frame{position:relative;inset:auto;flex:none;width:100%;aspect-ratio:904/946}
+  .hero-frame{position:relative;inset:auto;flex:0 1 auto;width:100%;aspect-ratio:904/946;max-height:50svh}
   .hero-back,.hero-front{object-position:50% 50%}
-  .hero-word{top:14.5%;font-size:clamp(24px,12.8vw,78px);letter-spacing:.01em}
+  .hero-word{top:20.4%;font-size:min(13.2vw,76px);letter-spacing:.01em}
   .hero-veil{z-index:5}
   /* copy leaves the picture and sits on solid dark, so nothing is cropped */
   .hero-copy{
@@ -366,7 +366,7 @@ footer .seo{
     background:#0A0E11;
   }
   .hero-copy p{margin-top:14px}
-  .hero-facts{position:relative;inset:auto}
+  .hero-facts{position:relative;inset:auto;padding-bottom:calc(78px + env(safe-area-inset-bottom))}
   .hero-veil{background:
     linear-gradient(180deg,rgba(8,12,16,.34) 0%,rgba(8,12,16,.30) 42%,rgba(8,12,16,.30) 100%)}
   .hero-facts{grid-template-columns:1fr 1fr}
@@ -381,6 +381,131 @@ footer .seo{
 @media (max-width:520px){
   .cards{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
+}
+
+/* ============ MOBILE REFINEMENT (desktop untouched) ============ */
+.mbar,.swipe-hint{display:none}
+@media (max-width:760px){
+  html{-webkit-text-size-adjust:100%}
+  body{overscroll-behavior-y:contain;padding-bottom:calc(80px + env(safe-area-inset-bottom))}
+  a,button{touch-action:manipulation}
+
+  /* tighter vertical rhythm: the page was far too long to scroll */
+  section{padding:52px var(--pad) 54px}
+  .shead{margin-bottom:26px}
+  .shead h2{font-size:27px;line-height:1.12;letter-spacing:-.015em}
+  .eyebrow{font-size:9.5px;letter-spacing:.24em}
+  .fleet p.lede{font-size:14.5px;line-height:1.72;margin-top:14px}
+
+  /* fleet stats: labels stop wrapping into towers */
+  .fleet .spec{margin-top:24px}
+  .fleet .spec div{padding:15px 14px}
+  .fleet .spec b{font-size:17px}
+  .fleet .spec span{margin-top:5px;font-size:9px;letter-spacing:.13em;line-height:1.5}
+
+  /* goals: a swipeable rail instead of four stacked billboards */
+  .cards{
+    display:flex;gap:10px;overflow-x:auto;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    margin-inline:calc(var(--pad) * -1);
+    padding:2px var(--pad) 14px;
+    scrollbar-width:none;
+  }
+  .cards::-webkit-scrollbar{display:none}
+  .card{flex:0 0 76%;aspect-ratio:4/5;scroll-snap-align:center;--chamfer:16px}
+  .card .txt{padding:18px 16px}
+  .card h3{font-size:17px}
+  .card p{font-size:11.5px;line-height:1.55;margin-top:7px}
+  .swipe-hint{
+    display:flex;align-items:center;gap:8px;margin-top:2px;
+    font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--steel-2);
+  }
+  .swipe-hint i{flex:1;height:1px;background:var(--line);display:block}
+
+  /* tariffs: one compact card per rate, full-width tap target */
+  .rates{border-top:0}
+  .rate{
+    display:grid;grid-template-columns:1fr auto;align-items:baseline;
+    gap:4px 12px;padding:18px 0 20px;border-bottom:1px solid var(--line);
+  }
+  .rate .h{font-size:21px;letter-spacing:.01em}
+  .rate .sum{grid-column:2;justify-self:end;font-size:18px}
+  .rate .per{grid-column:1;grid-row:2;order:0;font-size:10px;letter-spacing:.12em}
+  .rate .save{
+    grid-column:2;grid-row:2;order:0;justify-self:end;
+    font-size:9.5px;letter-spacing:.1em;padding:4px 9px;
+    background:rgba(11,12,13,.06);color:var(--ink);white-space:nowrap;
+  }
+  .rate .save.is-empty{display:none}
+  .rate .btn{
+    grid-column:1/-1;grid-row:3;order:0;justify-self:stretch;
+    margin-top:14px;padding:17px;text-align:center;font-size:10.5px;
+  }
+  .rate:hover{background:transparent}
+  .note{margin-top:20px;font-size:11.5px;line-height:1.8}
+
+  /* interior: side by side instead of two tall stacked frames */
+  .split{grid-template-columns:1fr 1fr;gap:8px}
+  .split figure{aspect-ratio:3/4;--chamfer:14px}
+
+  /* steps */
+  .steps{gap:22px}
+  .step h3{font-size:16px;margin:11px 0 7px}
+  .step p{font-size:12.5px;line-height:1.65}
+
+  /* closing block */
+  .final{padding-block:64px}
+  .final h2{font-size:30px}
+  .final p{font-size:10.5px;margin-top:14px}
+  .final .row{margin-top:26px;gap:10px;flex-direction:column;padding:0 var(--pad)}
+  .final .btn{width:100%;padding:16px;text-align:center}
+
+  /* footer: the phone number no longer breaks across lines */
+  footer{flex-direction:column;align-items:flex-start;gap:12px;padding:30px var(--pad) 34px}
+  footer span{line-height:1.9}
+  footer .seo{margin-top:14px;padding-top:16px;font-size:10px;line-height:1.85}
+
+  /* floating pill bar: always on screen, at thumb height */
+  .mbar{
+    position:fixed;left:50%;transform:translateX(-50%);
+    bottom:calc(11px + env(safe-area-inset-bottom));
+    z-index:60;display:flex;gap:7px;align-items:center;
+    width:calc(100% - 22px);max-width:430px;
+    padding:7px;border-radius:999px;
+    background:rgba(122,130,137,.32);
+    -webkit-backdrop-filter:blur(20px) saturate(1.25);
+    backdrop-filter:blur(20px) saturate(1.25);
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow:0 12px 34px rgba(0,0,0,.30);
+  }
+  .mbar a{
+    flex:1;display:flex;align-items:center;justify-content:center;
+    height:44px;border-radius:999px;text-decoration:none;color:#fff;
+    background:rgba(13,17,21,.76);border:1px solid rgba(255,255,255,.14);
+    font-size:12px;font-weight:400;letter-spacing:.01em;text-transform:none;
+    white-space:nowrap;transition:background .2s;
+  }
+  .mbar a:active{background:rgba(13,17,21,.94)}
+  .mbar-wa{background:#fff;color:var(--ink);border-color:#fff;font-weight:500}
+  /* the bar carries "Связаться", so the header keeps only the name */
+  .nav .wa{display:none}
+}
+/* short phones: tighten the first screen so nothing meets the floating bar */
+@media (max-width:760px) and (max-height:780px){
+  .hero-frame{max-height:42svh}
+  .hero-copy{padding:14px var(--pad)}
+  .hero-copy p{margin-top:10px;line-height:1.8}
+  .hero-copy .btn{padding:13px;margin-top:14px}
+  .hero-facts div{padding:11px var(--pad)}
+  .hero-facts b{font-size:15px}
+  .hero-facts{padding-bottom:calc(74px + env(safe-area-inset-bottom))}
+  .hero-word{top:17.5%}
+}
+@media (max-width:400px){
+  .card{flex:0 0 82%}
+  .shead h2{font-size:25px}
+  .mbar{gap:5px;padding:6px}
+  .mbar a{font-size:11px}
 }
 </style>
 </head>
@@ -403,12 +528,12 @@ footer .seo{
   <div class="hero-frame">
     <picture>
       <source media="(max-width:760px)" srcset="img/hero-back-m.webp">
-      <img class="hero-back" fetchpriority="high" decoding="async" src="img/hero-back.webp" alt="">
+      <img class="hero-back" src="img/hero-back.webp" alt="">
     </picture>
     <div class="hero-word" aria-hidden="true">Cybertruck</div>
     <picture>
       <source media="(max-width:760px)" srcset="img/hero-front-m.webp">
-      <img class="hero-front" fetchpriority="high" decoding="async" src="img/hero-front.webp" alt="Tesla Cybertruck с личным водителем на смотровой площадке над Алматы">
+      <img class="hero-front" src="img/hero-front.webp" alt="Tesla Cybertruck с личным водителем на смотровой площадке над Алматы">
     </picture>
     <div class="hero-veil"></div>
 
@@ -442,7 +567,7 @@ footer .seo{
     <h2>Два, а не один</h2>
   </div>
   <div class="fleet-grid">
-    <figure class="chamfer reveal"><img src="img/pair-grey.webp" alt="Два Tesla Cybertruck у здания в Алматы" loading="lazy" decoding="async"></figure>
+    <figure class="chamfer reveal"><img src="img/pair-grey.webp" alt="Два Tesla Cybertruck у здания в Алматы"></figure>
     <div class="reveal">
       <p class="lede">
         В Алматы Cybertruck можно пересчитать по пальцам. У нас их два - и это меняет
@@ -473,30 +598,31 @@ footer .seo{
     <div class="eyebrow">Цели</div>
     <h2>Под какую задачу берут</h2>
   </div>
+  <div class="swipe-hint" aria-hidden="true"><span>Листайте</span><i></i></div>
   <div class="cards">
     <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20Cybertruck%20%D1%81%20%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%BC%20%D0%B4%D0%BB%D1%8F%20%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%D0%B8%20%D0%B3%D0%BE%D1%81%D1%82%D0%B5%D0%B9." class="card chamfer reveal" target="_blank" rel="noopener">
-      <img src="img/driver.webp" alt="Личный водитель в костюме за рулём Cybertruck" loading="lazy" decoding="async">
+      <img src="img/driver.webp" alt="Личный водитель в костюме за рулём Cybertruck">
       <div class="txt">
         <h3>Встреча гостей</h3>
         <p>Аэропорт, отель, площадка. Водитель в костюме встречает и сопровождает.</p>
       </div>
     </a>
     <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20Cybertruck%20%D0%B4%D0%BB%D1%8F%20%D1%81%D1%8A%D1%91%D0%BC%D0%BA%D0%B8%20%D0%B8%D0%BB%D0%B8%20PR-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0." class="card chamfer reveal" target="_blank" rel="noopener">
-      <img src="img/model.webp" alt="Модель у открытой двери Cybertruck" loading="lazy" decoding="async">
+      <img src="img/model.webp" alt="Модель у открытой двери Cybertruck">
       <div class="txt">
         <h3>Съёмки и PR</h3>
         <p>Реклама, клипы, контент для брендов. Машина как реквизит и как повод.</p>
       </div>
     </a>
     <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9D%D1%83%D0%B6%D0%BD%D1%8B%20Cybertruck%20%D0%BD%D0%B0%20%D1%81%D0%B2%D0%B0%D0%B4%D1%8C%D0%B1%D1%83%20-%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BA%D0%BE%D0%BB%D0%BE%D0%BD%D0%BD%D0%B0%20%D0%B8%D0%B7%20%D0%B4%D0%B2%D1%83%D1%85%20%D0%BC%D0%B0%D1%88%D0%B8%D0%BD." class="card chamfer reveal" target="_blank" rel="noopener">
-      <img src="img/pair-lights.webp" alt="Два Cybertruck с включёнными фарами на улице Алматы" loading="lazy" decoding="async">
+      <img src="img/pair-lights.webp" alt="Два Cybertruck с включёнными фарами на улице Алматы">
       <div class="txt">
         <h3>Свадьбы и колонна</h3>
         <p>Две машины в ряд. Подача к дому, маршрут по городу, фотостоп.</p>
       </div>
     </a>
     <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20Cybertruck%20%D0%BD%D0%B0%20%D0%B4%D0%B5%D0%BD%D1%8C%20%D1%80%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F." class="card chamfer reveal" target="_blank" rel="noopener">
-      <img src="img/vertical-lights.webp" alt="Cybertruck с включёнными фарами" loading="lazy" decoding="async">
+      <img src="img/vertical-lights.webp" alt="Cybertruck с включёнными фарами">
       <div class="txt">
         <h3>Дни рождения</h3>
         <p>От дома до ресторана. Час, три или весь вечер - как удобно.</p>
@@ -521,7 +647,7 @@ footer .seo{
       <div class="h">1 час</div>
       <div class="sum">80 000 ₸</div>
       <div class="per">80 000 ₸ / час</div>
-      <div class="save">-</div>
+      <div class="save is-empty">-</div>
       <a href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20Cybertruck%20%D0%BD%D0%B0%201%20%D1%87%D0%B0%D1%81%20-%2080%20000%20%E2%82%B8.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%BD%D0%BE%D0%B5%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F." class="btn" target="_blank" rel="noopener">Выбрать</a>
     </div>
 
@@ -564,8 +690,8 @@ footer .seo{
     <h2>Внутри</h2>
   </div>
   <div class="split">
-    <figure class="chamfer reveal"><img src="img/interior.webp" alt="Салон Cybertruck" loading="lazy" decoding="async"></figure>
-    <figure class="chamfer reveal"><img src="img/cockpit.webp" alt="Руль и центральный экран Cybertruck" loading="lazy" decoding="async"></figure>
+    <figure class="chamfer reveal"><img src="img/interior.webp" alt="Салон Cybertruck"></figure>
+    <figure class="chamfer reveal"><img src="img/cockpit.webp" alt="Руль и центральный экран Cybertruck"></figure>
   </div>
 </section>
 
@@ -605,7 +731,7 @@ footer .seo{
 
 <!-- ===================== FINAL ===================== -->
 <section class="final" id="book">
-  <img src="img/rear.webp" alt="" loading="lazy" decoding="async">
+  <img src="img/rear.webp" alt="">
   <div class="inner">
     <div style="display:flex;justify-content:center"><div class="eyebrow" style="color:rgba(255,255,255,.6)">Свободные даты</div></div>
     <h2 style="margin-top:20px">Забронировать<br>Cybertruck</h2>
@@ -630,11 +756,38 @@ footer .seo{
   <span>© 2026</span>
 </footer>
 
+<!-- floating mobile bar -->
+<nav class="mbar" id="mbar" aria-label="Быстрые действия">
+  <a href="#rates">Тарифы</a>
+  <a href="https://www.instagram.com/first.autorent/" target="_blank" rel="noopener">Instagram</a>
+  <a class="mbar-wa" href="https://wa.me/77066613705?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20FIRST%20AUTO%20RENT.%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%83%20Cybertruck%20%D1%81%20%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%BC%20%D0%B2%20%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B." target="_blank" rel="noopener">Связаться</a>
+</nav>
+
 <script>
 const nav = document.querySelector('.nav');
 const hero = document.querySelector('.hero');
 new IntersectionObserver(([e]) => nav.classList.toggle('solid', !e.isIntersecting),
   { rootMargin: '-70px 0px 0px 0px' }).observe(hero);
+
+// keep CYBERTRUCK inside the viewport on any device, whatever font loads
+(() => {
+  const word = document.querySelector('.hero-word');
+  if (!word) return;
+  const fit = () => {
+    word.style.fontSize = '';
+    const avail = word.clientWidth - 12;
+    const range = document.createRange();
+    range.selectNodeContents(word);
+    const w = range.getBoundingClientRect().width;
+    if (w > avail) {
+      const px = parseFloat(getComputedStyle(word).fontSize);
+      word.style.fontSize = Math.floor(px * (avail / w)) + 'px';
+    }
+  };
+  fit();
+  addEventListener('resize', fit, { passive: true });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();
 
 const io = new IntersectionObserver((es) => {
   es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
@@ -718,5 +871,6 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
   else setTimeout(start, 1200);
 })();
 </script>
+
 </body>
 </html>
