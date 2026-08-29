@@ -355,15 +355,14 @@ footer .seo{
   .robot{display:none}
   .nav{height:54px}
   .hero{display:flex;flex-direction:column;height:100svh}
-  .hero-frame{position:relative;inset:auto;flex:0 1 auto;width:100%;aspect-ratio:904/946;max-height:50svh}
+  .hero-frame{position:relative;inset:auto;flex:1 1 auto;width:100%;aspect-ratio:904/946;min-height:34svh}
   .hero-back,.hero-front{object-position:50% 50%}
   .hero-word{top:20.4%;font-size:min(13.2vw,76px);letter-spacing:.01em}
   .hero-veil{z-index:5}
   /* copy leaves the picture and sits on solid dark, so nothing is cropped */
   .hero-copy{
-    position:relative;inset:auto;flex:1;display:flex;flex-direction:column;
-    justify-content:center;max-width:none;padding:22px var(--pad);
-    background:#0A0E11;
+    position:relative;inset:auto;flex:0 0 auto;display:flex;flex-direction:column;
+    max-width:none;padding:20px var(--pad) 22px;background:#0A0E11;
   }
   .hero-copy p{margin-top:14px}
   .hero-facts{position:relative;inset:auto;padding-bottom:calc(78px + env(safe-area-inset-bottom))}
@@ -492,14 +491,12 @@ footer .seo{
 }
 /* short phones: tighten the first screen so nothing meets the floating bar */
 @media (max-width:760px) and (max-height:780px){
-  .hero-frame{max-height:42svh}
   .hero-copy{padding:14px var(--pad)}
   .hero-copy p{margin-top:10px;line-height:1.8}
   .hero-copy .btn{padding:13px;margin-top:14px}
   .hero-facts div{padding:11px var(--pad)}
   .hero-facts b{font-size:15px}
   .hero-facts{padding-bottom:calc(74px + env(safe-area-inset-bottom))}
-  .hero-word{top:17.5%}
 }
 @media (max-width:400px){
   .card{flex:0 0 82%}
@@ -769,24 +766,49 @@ const hero = document.querySelector('.hero');
 new IntersectionObserver(([e]) => nav.classList.toggle('solid', !e.isIntersecting),
   { rootMargin: '-70px 0px 0px 0px' }).observe(hero);
 
-// keep CYBERTRUCK inside the viewport on any device, whatever font loads
+// CYBERTRUCK: fit the width, then sit it on the ridgeline.
+// The mobile frame can be cropped by flex, so the skyline does not stay at a
+// fixed percentage - it is computed from the real cover geometry each time.
 (() => {
-  const word = document.querySelector('.hero-word');
-  if (!word) return;
-  const fit = () => {
+  const word  = document.querySelector('.hero-word');
+  const frame = document.querySelector('.hero-frame');
+  const img   = document.querySelector('.hero-back');
+  if (!word || !frame || !img) return;
+
+  const RIDGE = 0.279;   // mean skyline height in the portrait crop
+  const LIFT  = 0.075;   // how far above the ridge the word sits, per frame height
+
+  const place = () => {
     word.style.fontSize = '';
+    word.style.top = '';
+
+    // 1. never let the word run past the edges, whatever font actually loaded
     const avail = word.clientWidth - 12;
     const range = document.createRange();
     range.selectNodeContents(word);
-    const w = range.getBoundingClientRect().width;
+    let w = range.getBoundingClientRect().width;
     if (w > avail) {
       const px = parseFloat(getComputedStyle(word).fontSize);
       word.style.fontSize = Math.floor(px * (avail / w)) + 'px';
     }
+
+    // 2. desktop keeps its CSS position untouched
+    if (innerWidth > 760 || !img.naturalWidth) return;
+
+    // 3. where does the skyline actually land inside the cropped frame?
+    const fw = frame.clientWidth, fh = frame.clientHeight;
+    const scale = Math.max(fw / img.naturalWidth, fh / img.naturalHeight);
+    const drawnH = img.naturalHeight * scale;
+    const ridgeY = (fh - drawnH) / 2 + RIDGE * drawnH;
+
+    word.style.top = Math.round(ridgeY - LIFT * drawnH) + 'px';
   };
-  fit();
-  addEventListener('resize', fit, { passive: true });
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+
+  place();
+  addEventListener('resize', place, { passive: true });
+  addEventListener('orientationchange', place, { passive: true });
+  if (img.complete) place(); else img.addEventListener('load', place, { once: true });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
 })();
 
 const io = new IntersectionObserver((es) => {
