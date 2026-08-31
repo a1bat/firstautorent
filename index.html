@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Аренда Tesla Cybertruck в Алматы с водителем - FIRST AUTO RENT</title>
 <meta name="description" content="Аренда Tesla Cybertruck в Алматы с личным водителем от 1 часа. Два автомобиля в парке. Подача к дому, на площадку, в аэропорт. Свадьбы, съёмки, встреча гостей. От 80 000 ₸ в час. WhatsApp +7 706 661 37 05.">
+<!-- Адрес сайта. При смене домена заменить здесь, в og:url, в JSON-LD,
+     а также в CNAME, sitemap.xml, robots.txt и llms.txt -->
 <link rel="canonical" href="https://firstautorent.kz/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="geo.region" content="KZ-ALA">
@@ -28,6 +30,15 @@
   "telephone": "+77066613705",
   "priceRange": "80000-600000 KZT",
   "areaServed": { "@type": "City", "name": "Алматы" },
+  "image": "https://firstautorent.kz/img/hero-back.webp",
+  "sameAs": ["https://www.instagram.com/first.autorent/"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+77066613705",
+    "contactType": "reservations",
+    "availableLanguage": ["ru", "kk", "en"]
+  },
+  "vehicleModel": "Tesla Cybertruck",
   "address": { "@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ" },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
@@ -505,6 +516,112 @@ footer .seo{
   .mbar a{font-size:11px}
 }
 </style>
+
+<!-- ============================================================
+     АНАЛИТИКА. Впишите номера счётчиков ниже и всё заработает.
+     Пока строки пустые, ничего не грузится и сайт не тормозит.
+     Яндекс.Метрика: metrika.yandex.ru -> создать счётчик -> номер вида 98765432
+     Google Analytics: analytics.google.com -> поток данных -> код вида G-XXXXXXXXXX
+     ============================================================ -->
+<script>
+window.ANALYTICS = { metrika: '', ga4: '' };
+
+(() => {
+  const CFG = window.ANALYTICS;
+  const sent = new Set();
+
+  // --- загрузка счётчиков ---------------------------------------------
+  if (CFG.metrika) {
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0];
+    k.async=1;k.src=r;a.parentNode.insertBefore(k,a)})
+    (window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+    ym(CFG.metrika, 'init', {
+      webvisor: true,            // запись сессий: видно, куда человек тыкал
+      clickmap: true,            // карта кликов
+      trackLinks: true,
+      accurateTrackBounce: 15000,// отказом считается уход раньше 15 секунд
+      trackHash: true
+    });
+  }
+
+  if (CFG.ga4) {
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + CFG.ga4;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', CFG.ga4);
+  }
+
+  // --- единая точка отправки событий -----------------------------------
+  const track = (name, params) => {
+    if (CFG.metrika && window.ym) ym(CFG.metrika, 'reachGoal', name, params);
+    if (CFG.ga4 && window.gtag) gtag('event', name, params || {});
+  };
+  window.track = track;
+
+  // --- глубина прокрутки ------------------------------------------------
+  const marks = [25, 50, 75, 100];
+  const onScroll = () => {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - innerHeight;
+    if (max <= 0) return;
+    const pct = Math.round((scrollY / max) * 100);
+    for (const m of marks) {
+      if (pct >= m && !sent.has('scroll' + m)) {
+        sent.add('scroll' + m);
+        track('scroll_' + m, { depth: m });
+      }
+    }
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // --- сколько человек досмотрел до конкретного блока --------------------
+  const watch = { fleet: 'Автопарк', cases: 'Цели', rates: 'Тарифы', how: 'Как это работает', book: 'Форма связи' };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const id = e.target.id;
+      if (sent.has('sec_' + id)) return;
+      sent.add('sec_' + id);
+      track('view_' + id, { section: watch[id] });
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.4 });
+  Object.keys(watch).forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
+
+  // --- обращения: откуда именно нажали ----------------------------------
+  const where = (el) => {
+    const rate = el.closest('.rate');
+    if (rate) return 'tariff:' + (rate.querySelector('.h')?.textContent.trim() || '?');
+    const card = el.closest('.card');
+    if (card) return 'goal:' + (card.querySelector('h3')?.textContent.trim() || '?');
+    if (el.closest('.mbar')) return 'floating_bar';
+    if (el.closest('.nav')) return 'header';
+    if (el.closest('.hero-copy')) return 'hero';
+    if (el.closest('.final')) return 'final_block';
+    if (el.closest('footer')) return 'footer';
+    return 'other';
+  };
+
+  document.addEventListener('click', (ev) => {
+    const a = ev.target.closest('a');
+    if (!a) return;
+    const href = a.getAttribute('href') || '';
+    const src = where(a);
+    if (href.includes('wa.me'))            track('whatsapp', { source: src });
+    else if (href.includes('instagram.com')) track('instagram', { source: src });
+    else if (href.startsWith('tel:'))        track('call', { source: src });
+  }, { passive: true });
+
+  // --- сколько времени реально провели ----------------------------------
+  [15, 60, 180].forEach(sec => setTimeout(() => track('time_' + sec + 's'), sec * 1000));
+})();
+</script>
 </head>
 <body>
 
